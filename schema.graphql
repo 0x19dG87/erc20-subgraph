@@ -4,7 +4,7 @@ type Token @entity {
   symbol: String!
   decimals: Int!
   approvals: [TokenApproval!]! @derivedFrom(field: "token")
-  orderId: Int!
+  orderId: Int
 }
 
 type Account @entity {

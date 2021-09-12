@@ -1,16 +1,15 @@
 {
-  "name": "erc20-subgraph",
-  "version": "0.0.1",
-  "description": "Subgraph for indexing all ERC20 token balances and approvals",
+  "name": "erc20-approvals",
+  "version": "0.0.5",
+  "description": "Subgraph for indexing all ERC20 token approvals",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy georgeroman/erc20-subgraph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/"
+    "deploy": "graph deploy --product hosted-service 0x19dG87/erc20-approvals"
   },
-  "author": "George Roman",
   "license": "MIT",
   "devDependencies": {
-    "@graphprotocol/graph-cli": "^0.20.0",
+    "@graphprotocol/graph-cli": "^0.21.1",
     "@graphprotocol/graph-ts": "^0.20.0"
   }
 }
