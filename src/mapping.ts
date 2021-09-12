@@ -10,6 +10,8 @@ import {
 
 const zeroAddress = '0x0000000000000000000000000000000000000000';
 
+let lastTokenId = 0;
+
 function loadOrCreateAccount(address: string): Account | null {
   let account = Account.load(address);
   if (!account) {
@@ -50,6 +52,7 @@ function loadOrCreateToken(event: ethereum.Event): Token | null {
     token.name = nameResult.value;
     token.symbol = symbolResult.value;
     token.decimals = decimalsResult.value.toI32();
+    token.orderId = lastTokenId++;
     token.save();
   }
   return token;
